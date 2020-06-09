@@ -20,13 +20,10 @@ export class CivListComponent implements OnInit {
   getCivilizations() {
     this.aoe2ClientService.getCivilizations().subscribe(
       data => {
-        console.log(data['civilizations']);
         this.civilizations = data['civilizations'];
-        console.log(this.civilizations);
       },
       err => {
         console.error(err);
-        this.errorString = err['error']['error'];
       },
       () => {
         console.log('done loading civilizations');

@@ -1,0 +1,45 @@
+<div *ngIf="civilization">
+    <h2>{{civilization['name']}}</h2>
+    <ul>
+        <li>Expansion:
+            <ul>
+                <li>{{civilization['expansion']}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Army type:
+            <ul>
+                <li>{{civilization['army_type']}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Civilization bonus:
+            <ul>
+                <li *ngFor="let bonus of civilization['civilization_bonus']">{{bonus}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Team bonus:
+            <ul>
+                <li>{{civilization['team_bonus']}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Unique tech:
+            <ul>
+                <li *ngFor="let tech of uniqueTechs"><a routerLink="/tech/{{tech['name']}}">{{tech['name']}}</a></li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Unique unit:
+            <ul>
+                <li *ngFor="let unit of uniqueUnits"><a routerLink="/unit/{{unit['name']}}">{{unit['name']}}</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

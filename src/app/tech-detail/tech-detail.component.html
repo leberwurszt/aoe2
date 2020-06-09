@@ -1,0 +1,37 @@
+<div *ngIf="tech">
+    <h2>{{tech['name']}}</h2>
+
+    <ul>
+        <li>Description:
+            <ul>
+                <li>{{tech['description']}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Expansion:
+            <ul>
+                <li>{{tech['expansion']}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Age:
+            <ul>
+                <li>{{tech['age']}}</li>
+            </ul>
+        </li>
+        <br>
+
+        <li>Cost:
+            <ul>
+                <li *ngIf="tech['cost']['Food']">Food: {{tech['cost']['Food']}}</li>
+                <li *ngIf="tech['cost']['Wood']">Wood: {{tech['cost']['Wood']}}</li>
+                <li *ngIf="tech['cost']['Stone']">Stone: {{tech['cost']['Stone']}}</li>
+                <li *ngIf="tech['cost']['Gold']">Gold: {{tech['cost']['Gold']}}</li>
+            </ul>
+        </li>
+        <br>
+
+    </ul>
+</div>
