@@ -1,12 +1,87 @@
 <div *ngIf="unit">
     <h2>{{unit['name']}}</h2>
-
     <ul>
-        <li>Age:
-            <ul>
-                <li>{{unit['age']}}</li>
-            </ul>
-
+        <li>Expansion:
+            <b>{{unit['expansion']}}</b>
         </li>
+
+        <li>Age:
+            <b>{{unit['age']}}</b>
+        </li>
+
+        <li>Created in:
+            <a routerLink="/structure/{{createdIn}}"><b>{{createdIn}}</b></a>
+        </li>
+
+        <li *ngIf="unit['cost']['Cost'] != 'No cost'">Cost:
+            <ul>
+                <li *ngIf="unit['cost']['Food']">Food: <b>{{unit['cost']['Food']}}</b></li>
+                <li *ngIf="unit['cost']['Wood']">Wood: <b>{{unit['cost']['Wood']}}</b></li>
+                <li *ngIf="unit['cost']['Stone']">Stone: <b>{{unit['cost']['Stone']}}</b></li>
+                <li *ngIf="unit['cost']['Gold']">Gold: <b>{{unit['cost']['Gold']}}</b></li>
+            </ul>
+        </li>
+
+        <li *ngIf="unit['build_time']">Build time:
+            <b>{{unit['build_time']}}</b>
+        </li>
+
+        <li>Hit points:
+            <b>{{unit['hit_points']}}</b>
+        </li>
+
+        <li>Movement rate:
+            <b>{{unit['movement_rate']}}</b>
+        </li>
+
+        <li *ngIf="unit['attack']">Attack:
+            <b>{{unit['attack']}}</b>
+        </li>
+
+        <li *ngIf="unit['attack_bonus']">Attack bonus:
+            <ul>
+                <li *ngFor="let attackBonus of unit['attack_bonus']">
+                    <b>{{attackBonus}}</b>
+                </li>
+            </ul>
+        </li>
+
+        <li>Armor:
+            <b>{{unit['armor']}}</b>
+        </li>
+
+        <li *ngIf="unit['armor_bonus']">Armor bonus:
+            <ul>
+                <li *ngFor="let armorBonus of unit['armor_bonus']">
+                    <b>{{armorBonus}}</b>
+                </li>
+            </ul>
+        </li>
+
+        <li *ngIf="unit['range']">Range:
+            <b>{{unit['range']}}</b>
+        </li>
+
+        <li>Line of sight:
+            <b>{{unit['line_of_sight']}}</b>
+        </li>
+
+        <li *ngIf="unit['search_radius']">Search radius:
+            <b>{{unit['search_radius']}}</b>
+        </li>
+
+        <li *ngIf="unit['accuracy']">Accuracy:
+            <b>{{unit['accuracy']}}</b>
+        </li>
+
+        <li *ngIf="unit['blast_radius']">Blast radius:
+            <b>{{unit['blast_radius']}}</b>
+        </li>
+
+        <li *ngIf="unit['reload_time']">Reload time:
+            <b>{{unit['reload_time']}}</b>
+        </li>
+
     </ul>
+    <i>{{unit['description']}}</i>
 </div>

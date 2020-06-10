@@ -2,36 +2,41 @@
     <h2>{{tech['name']}}</h2>
 
     <ul>
-        <li>Description:
-            <ul>
-                <li>{{tech['description']}}</li>
-            </ul>
-        </li>
-        <br>
 
         <li>Expansion:
-            <ul>
-                <li>{{tech['expansion']}}</li>
-            </ul>
+            <b>{{tech['expansion']}}</b>
         </li>
-        <br>
 
         <li>Age:
-            <ul>
-                <li>{{tech['age']}}</li>
-            </ul>
+            <b>{{tech['age']}}</b>
         </li>
-        <br>
+
+        <li>Develops in:
+            <a routerLink="/structure/{{developsIn}}"><b>{{developsIn}}</b></a>
+        </li>
 
         <li>Cost:
             <ul>
-                <li *ngIf="tech['cost']['Food']">Food: {{tech['cost']['Food']}}</li>
-                <li *ngIf="tech['cost']['Wood']">Wood: {{tech['cost']['Wood']}}</li>
-                <li *ngIf="tech['cost']['Stone']">Stone: {{tech['cost']['Stone']}}</li>
-                <li *ngIf="tech['cost']['Gold']">Gold: {{tech['cost']['Gold']}}</li>
+                <li *ngIf="tech['cost']['Food']">Food: <b>{{tech['cost']['Food']}}</b></li>
+                <li *ngIf="tech['cost']['Wood']">Wood: <b>{{tech['cost']['Wood']}}</b></li>
+                <li *ngIf="tech['cost']['Stone']">Stone: <b>{{tech['cost']['Stone']}}</b></li>
+                <li *ngIf="tech['cost']['Gold']">Gold: <b>{{tech['cost']['Gold']}}</b></li>
             </ul>
         </li>
-        <br>
+
+        <li>Build time:
+            <b>{{tech['build_time']}}</b>
+        </li>
+
+        <li *ngIf="tech['applies_to']">Applies to:
+            <ul>
+                <li *ngFor="let appliesTo of tech['applies_to']">
+                    <b>{{appliesTo}}</b>
+                </li>
+            </ul>
+        </li>
+
 
     </ul>
+    <i>{{tech['description']}}</i>
 </div>

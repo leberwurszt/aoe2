@@ -12,6 +12,7 @@ export class UnitDetailComponent implements OnInit {
 
   public errorString: String = "";
   public unit: Object[];
+  public createdIn: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,28 @@ export class UnitDetailComponent implements OnInit {
         console.error(err);
       },
       () => {
-        console.log('done loading tech');
+        console.log('done loading unit');
+        this.getCreatedIn();
+      }
+    );
+  }
+
+  getCreatedIn() {
+    this.aoe2ClientService.getFromUrl(this.unit['created_in']).subscribe(
+      data => {
+        if(!data['name']) {                                 // some structure details have an array with multiple values
+          this.createdIn = data[0]['name'];                 // in that case, get the name from first index
+        }
+        else {
+          this.createdIn = data['name'];
+        }
+        console.log(this.createdIn);
+      },
+      err => {
+        console.error(err);
+      },
+      () => {
+        console.log('done loading structure unit is created in');
       }
     );
   }

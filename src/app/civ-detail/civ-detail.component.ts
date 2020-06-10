@@ -23,9 +23,9 @@ export class CivDetailComponent implements OnInit {
     { }
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const name = this.route.snapshot.paramMap.get('name');
 
-    this.getCivilizationDetail(id);
+    this.getCivilizationDetail(name);
   }
 
   getUniqueUnits() {
@@ -42,7 +42,7 @@ export class CivDetailComponent implements OnInit {
           console.log('done loading unique unit');
         }
       );
-  });
+    });
   }
 
   getUniqueTechs() {
@@ -59,11 +59,11 @@ export class CivDetailComponent implements OnInit {
           console.log('done loading unique tech');
         }
       );
-  });
+    });
   }
 
-  getCivilizationDetail(id) {
-    this.aoe2ClientService.getCivilizationDetail(id).subscribe(
+  getCivilizationDetail(name) {
+    this.aoe2ClientService.getCivilizationDetail(name).subscribe(
       data => {
         this.civilization = data;
         console.log(this.civilization);

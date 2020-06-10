@@ -1,3 +1,4 @@
+<h2>Civilizations</h2>
 <table>
     <tr>
         <th>Name</th>
@@ -5,7 +6,7 @@
         <th>Army type</th>
     </tr>
     <tr *ngFor="let civilization of civilizations">
-        <td><a routerLink="/civilization/{{civilization['id']}}">{{civilization['name']}}</a></td>
+        <td><a routerLink="/civilization/{{civilization['name']}}">{{civilization['name']}}</a></td>
         <td>{{civilization['expansion']}}</td>
         <td>{{civilization['army_type']}}</td>
 

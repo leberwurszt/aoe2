@@ -12,6 +12,7 @@ export class TechDetailComponent implements OnInit {
 
   public errorString: String = "";
   public tech: Object[];
+  public developsIn: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,8 +38,27 @@ export class TechDetailComponent implements OnInit {
       },
       () => {
         console.log('done loading tech');
+        this.getDevelopsIn();
       }
     );
   }
-
+  getDevelopsIn() {
+    this.aoe2ClientService.getFromUrl(this.tech['develops_in']).subscribe(
+      data => {
+        if(!data['name']) {                                 // some structure details have an array with multiple values
+          this.developsIn = data[0]['name'];                 // in that case, get the name from first index
+        }
+        else {
+          this.developsIn = data['name'];
+        }
+        console.log(this.developsIn);
+      },
+      err => {
+        console.error(err);
+      },
+      () => {
+        console.log('done loading structure name technology is developed in');
+      }
+    );
+  }
 }

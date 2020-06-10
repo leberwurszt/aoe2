@@ -1,0 +1,13 @@
+<h2>Technologies</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Expansion</th>
+    </tr>
+    <tr *ngFor="let tech of techs">
+        <td><a routerLink="/tech/{{tech['name']}}">{{tech['name']}}</a></td>
+        <td>{{tech['expansion']}}</td>
+
+    </tr>
+
+</table>

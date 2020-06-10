@@ -1,0 +1,61 @@
+<div *ngIf="structure">
+    <h2>{{structure[0]['name']}}</h2>
+
+    <ul *ngFor="let structure_ of structure">
+
+        <li>Expansion:
+            <b>{{structure_['expansion']}}</b>
+        </li>
+
+        <li>Age:
+            <b>{{structure_['age']}}</b>
+        </li>
+
+        <li *ngIf="structure_['cost']['Cost'] != 'No cost'">Cost:
+            <ul>
+                <li *ngIf="structure_['cost']['Food']">Food: <b>{{structure_['cost']['Food']}}</b></li>
+                <li *ngIf="structure_['cost']['Wood']">Wood: <b>{{structure_['cost']['Wood']}}</b></li>
+                <li *ngIf="structure_['cost']['Stone']">Stone: <b>{{structure_['cost']['Stone']}}</b></li>
+                <li *ngIf="structure_['cost']['Gold']">Gold: <b>{{structure_['cost']['Gold']}}</b></li>
+            </ul>
+        </li>
+
+        <li>Build time:
+            <b>{{structure_['build_time']}}</b>
+        </li>
+
+        <li>Hit points:
+            <b>{{structure_['hit_points']}}</b>
+        </li>
+
+        <li>Line of sight:
+            <b>{{structure_['line_of_sight']}}</b>
+        </li>
+
+        <li>Armor:
+            <b>{{structure_['armor']}}</b>
+        </li>
+
+        <li *ngIf="structure_['range']">Range:
+            <b>{{structure_['range']}}</b>
+        </li>
+
+        <li *ngIf="structure_['reload_time']">Reload time:
+            <b>{{structure_['reload_time']}}</b>
+        </li>
+
+        <li *ngIf="structure_['attack']">Attack:
+            <b>{{structure_['attack']}}</b>
+        </li>
+
+        <li *ngIf="structure_['special']">Special:
+            <ul>
+                <li *ngFor="let special of structure_['special']">
+                    <b>{{special}}</b>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <i>{{structure[0]['description']}}</i>
+</div>

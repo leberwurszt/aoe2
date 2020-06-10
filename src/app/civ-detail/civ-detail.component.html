@@ -3,42 +3,42 @@
     <ul>
         <li>Expansion:
             <ul>
-                <li>{{civilization['expansion']}}</li>
+                <li><b>{{civilization['expansion']}}</b></li>
             </ul>
         </li>
         <br>
 
         <li>Army type:
             <ul>
-                <li>{{civilization['army_type']}}</li>
+                <li><b>{{civilization['army_type']}}</b></li>
             </ul>
         </li>
         <br>
 
         <li>Civilization bonus:
             <ul>
-                <li *ngFor="let bonus of civilization['civilization_bonus']">{{bonus}}</li>
+                <li *ngFor="let bonus of civilization['civilization_bonus']"><b>{{bonus}}</b></li>
             </ul>
         </li>
         <br>
 
         <li>Team bonus:
             <ul>
-                <li>{{civilization['team_bonus']}}</li>
+                <li><b>{{civilization['team_bonus']}}</b></li>
             </ul>
         </li>
         <br>
 
         <li>Unique tech:
             <ul>
-                <li *ngFor="let tech of uniqueTechs"><a routerLink="/tech/{{tech['name']}}">{{tech['name']}}</a></li>
+                <li *ngFor="let tech of uniqueTechs"><b><a routerLink="/tech/{{tech['name']}}">{{tech['name']}}</a></b></li>
             </ul>
         </li>
         <br>
 
         <li>Unique unit:
             <ul>
-                <li *ngFor="let unit of uniqueUnits"><a routerLink="/unit/{{unit['name']}}">{{unit['name']}}</a></li>
+                <li *ngFor="let unit of uniqueUnits"><a routerLink="/unit/{{unit['name']}}"><b>{{unit['name']}}</b></a></li>
             </ul>
         </li>
     </ul>
