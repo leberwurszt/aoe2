@@ -14,6 +14,8 @@ import { TechListComponent } from './tech-list/tech-list.component';
 import { StructureListComponent } from './structure-list/structure-list.component';
 import { StructureDetailComponent } from './structure-detail/structure-detail.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

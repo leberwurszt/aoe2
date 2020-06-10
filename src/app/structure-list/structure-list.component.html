@@ -1,13 +1,5 @@
-<h2>Structures</h2>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Expansion</th>
-    </tr>
-    <tr *ngFor="let structure of structures">
-        <td><a routerLink="/structure/{{structure['name']}}">{{structure['name']}}</a></td>
-        <td>{{structure['expansion']}}</td>
-
-    </tr>
-
-</table>
+<ul>
+    <li *ngFor="let structure of structures">
+        <a routerLink="/structure/{{structure['name']}}">{{structure['name']}}</a>
+    </li>
+</ul>

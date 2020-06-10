@@ -1,13 +1,5 @@
-<h2>Units</h2>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Expansion</th>
-    </tr>
-    <tr *ngFor="let unit of units">
-        <td><a routerLink="/unit/{{unit['name']}}">{{unit['name']}}</a></td>
-        <td>{{unit['expansion']}}</td>
-
-    </tr>
-
-</table>
+<ul>
+    <li *ngFor="let unit of units">
+        <a routerLink="/unit/{{unit['name']}}">{{unit['name']}}</a>
+    </li>
+</ul>

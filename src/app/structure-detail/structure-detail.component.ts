@@ -21,10 +21,14 @@ export class StructureDetailComponent implements OnInit {
     { }
 
 
-  ngOnInit(): void {
-    const name: string = this.route.snapshot.paramMap.get('name');
-    this.getStructureDetail(name);
-  }
+    ngOnInit(): void {
+      this.route.params.subscribe(
+        params => {
+          const name = params['name'];
+          this.getStructureDetail(name);
+        }
+      );
+    }
 
   getStructureDetail(name: string) {
     this.aoe2ClientService.getStructureDetail(name).subscribe(

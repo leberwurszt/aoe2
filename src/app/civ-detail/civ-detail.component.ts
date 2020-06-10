@@ -22,13 +22,17 @@ export class CivDetailComponent implements OnInit {
    )
     { }
 
-  ngOnInit(): void {
-    const name = this.route.snapshot.paramMap.get('name');
-
-    this.getCivilizationDetail(name);
-  }
+    ngOnInit(): void {
+      this.route.params.subscribe(
+        params => {
+          const name = params['name'];
+          this.getCivilizationDetail(name);
+        }
+      );
+    }
 
   getUniqueUnits() {
+    this.uniqueUnits.length = 0;
     this.civilization['unique_unit'].forEach(unitUrl => {
       this.aoe2ClientService.getFromUrl(unitUrl).subscribe(
         data => {
@@ -46,6 +50,7 @@ export class CivDetailComponent implements OnInit {
   }
 
   getUniqueTechs() {
+    this.uniqueTechs.length = 0;
     this.civilization['unique_tech'].forEach(techUrl => {
       this.aoe2ClientService.getFromUrl(techUrl).subscribe(
         data => {

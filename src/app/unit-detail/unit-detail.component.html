@@ -10,7 +10,8 @@
         </li>
 
         <li>Created in:
-            <a routerLink="/structure/{{createdIn}}"><b>{{createdIn}}</b></a>
+            <a *ngIf="createdIn.link != ''" routerLink="{{createdIn.link}}"><b>{{createdIn.name}}</b></a>
+            <b *ngIf="createdIn.link == ''">{{createdIn.name}}</b>
         </li>
 
         <li *ngIf="unit['cost']['Cost'] != 'No cost'">Cost:
@@ -83,5 +84,5 @@
         </li>
 
     </ul>
-    <i>{{unit['description']}}</i>
+    <i *ngIf="unit['description']">{{unit['description']}}</i>
 </div>

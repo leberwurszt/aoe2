@@ -3,10 +3,17 @@
 </div>
 
 <div id="menu">
-<h3><a routerLink="/civ-list/">Civilizations</a></h3>
-<h3><a routerLink="/unit-list/">Units</a></h3>
-<h3><a routerLink="/tech-list/">Technologies</a></h3>
-<h3><a routerLink="/structure-list/">Structures</a></h3>
+<h3 ><a [routerLink]="" (click)="linkCiv()">Civilizations</a></h3>
+<app-civ-list *ngIf="checkCiv()"></app-civ-list>
+
+<h3><a [routerLink]="" (click)="linkUnit()">Units</a></h3>
+<app-unit-list *ngIf="checkUnit()"></app-unit-list>
+
+<h3><a [routerLink]="" (click)="linkTech()">Technologies</a></h3>
+<app-tech-list *ngIf="checkTech()"></app-tech-list>
+
+<h3><a [routerLink]="" (click)="linkStruct()">Structures</a></h3>
+<app-structure-list *ngIf="checkStruct()"></app-structure-list>
 </div>
 
 <div id="content">

@@ -30,13 +30,14 @@
 
         <li *ngIf="tech['applies_to']">Applies to:
             <ul>
-                <li *ngFor="let appliesTo of tech['applies_to']">
-                    <b>{{appliesTo}}</b>
+                <li *ngFor="let appliesTo_ of appliesTo">
+                    <a *ngIf="appliesTo_.link != ''" routerLink="{{appliesTo_.link}}"><b>{{appliesTo_.name}}</b></a>
+                    <b *ngIf="appliesTo_.link == ''">{{appliesTo_.name}}</b>
                 </li>
             </ul>
         </li>
 
 
     </ul>
-    <i>{{tech['description']}}</i>
+    <i *ngIf="tech['description']">{{tech['description']}}</i>
 </div>

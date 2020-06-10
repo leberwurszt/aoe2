@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Aoe2ClientService } from '../aoe2client.service'
 
+
+
 @Component({
   selector: 'app-tech-list',
   templateUrl: './tech-list.component.html',
@@ -10,6 +12,7 @@ export class TechListComponent implements OnInit {
 
   public errorString: String = "";
   public techs: Object[] = new Array();
+
 
   constructor(private aoe2ClientService: Aoe2ClientService) { }
 
@@ -28,9 +31,11 @@ export class TechListComponent implements OnInit {
       },
       () => {
         console.log('done loading technologies');
+
       }
     );
   }
+
 
 
 }

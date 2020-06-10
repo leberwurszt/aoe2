@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Aoe2ClientService } from '../aoe2client.service'
 
 @Component({
-  selector: 'app-tech-list',
+  selector: 'app-structure-list',
   templateUrl: './structure-list.component.html',
   styleUrls: ['./structure-list.component.css']
 })
